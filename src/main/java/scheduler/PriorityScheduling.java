@@ -7,7 +7,7 @@ public class PriorityScheduling {
 
     public static void execute(List<Process> processes) {
 
-        int currentTime = 0;
+        int time = 0;
         int completed = 0;
         int n = processes.size();
 
@@ -16,41 +16,49 @@ public class PriorityScheduling {
         while (completed < n) {
 
             Process highest = null;
-            int bestPriority = Integer.MAX_VALUE;
 
-            for (Process p : processes) {
+            for (Process proc : processes) {
 
-                if (p.arrivalTime <= currentTime
-                        && !p.isCompleted
-                        && p.priority < bestPriority) {
+                if (proc.arrivalTime <= time
+                        && proc.remainingTime > 0) {
 
-                    bestPriority = p.priority;
-                    highest = p;
+                    // الأقل رقم = أعلى أولوية
+                    if (highest == null
+                            || proc.priority < highest.priority
+                            || (proc.priority == highest.priority
+                            && proc.arrivalTime < highest.arrivalTime)) {
+
+                        highest = proc;
+                    }
                 }
             }
 
-            if (highest == null) {
-                currentTime++;
-                continue;
-            }
+            if (highest != null) {
 
-            // Response time
-            if (highest.responseTime == -1) {
-                highest.responseTime = currentTime - highest.arrivalTime;
-            }
+                // أول مرة يشتغل فيها
+                if (!highest.started) {
+                    highest.responseTime = time - highest.arrivalTime;
+                    highest.started = true;
+                }
 
-            // Execute 1 unit (Preemptive)
-            highest.burstTime--;
-            currentTime++;
+                // تنفيذ وحدة زمن واحدة (Preemptive)
+                highest.remainingTime--;
+                time++;
 
-            if (highest.burstTime == 0) {
-                highest.completionTime = currentTime;
-                highest.calculateTimes();
-                highest.isCompleted = true;
-                completed++;
+                if (highest.remainingTime == 0) {
+                    highest.completionTime = time;
+                    highest.calculateTimes();
+                    highest.isCompleted = true;
+                    completed++;
+                }
+
+            } else {
+                // CPU Idle
+                time++;
             }
         }
 
+        // عرض النتائج
         for (Process p : processes) {
             p.display();
         }

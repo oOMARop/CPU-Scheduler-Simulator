@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import model.Process;
 import metrics.MetricsCalculator;
@@ -10,24 +11,51 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<Process> processes1 = new ArrayList<>();
-        processes1.add(new Process(1, 0, 7, 2));
-        processes1.add(new Process(2, 2, 4, 1));
-        processes1.add(new Process(3, 4, 1, 3));
-        processes1.add(new Process(4, 5, 4, 2));
+        Scanner input = new Scanner(System.in);
 
-        // Clone idea (simple reset approach)
-        List<Process> processes2 = new ArrayList<>();
-        for (Process p : processes1) {
-            processes2.add(new Process(p.pid, p.arrivalTime, p.burstTime, p.priority));
+        List<Process> processes1 = new ArrayList<>();
+
+        System.out.print("Enter number of processes: ");
+        int n = input.nextInt();
+
+        for (int i = 0; i < n; i++) {
+
+            System.out.println("\nProcess " + (i + 1));
+
+            System.out.print("Arrival Time: ");
+            int at = input.nextInt();
+
+            System.out.print("Burst Time: ");
+            int bt = input.nextInt();
+
+            System.out.print("Priority: ");
+            int p = input.nextInt();
+
+            processes1.add(new Process(i + 1, at, bt, p));
         }
 
-        // SJF
+        // Clone for second algorithm
+        List<Process> processes2 = new ArrayList<>();
+
+        for (Process p : processes1) {
+            processes2.add(
+                new Process(
+                    p.pid,
+                    p.arrivalTime,
+                    p.burstTime,
+                    p.priority
+                )
+            );
+        }
+
+        // Run SJF
         SJF.execute(processes1);
         MetricsCalculator.displayAverages(processes1);
 
-        // Priority
+        // Run Priority Scheduling
         PriorityScheduling.execute(processes2);
         MetricsCalculator.displayAverages(processes2);
+
+        input.close();
     }
 }

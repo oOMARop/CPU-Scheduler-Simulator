@@ -1,9 +1,11 @@
 package model;
 
 public class Process {
+
     public int pid;
     public int arrivalTime;
     public int burstTime;
+    public int remainingTime;
     public int priority;
 
     public int completionTime;
@@ -12,18 +14,22 @@ public class Process {
     public int responseTime;
 
     public boolean isCompleted;
+    public boolean started;
 
     public Process(int pid, int arrivalTime, int burstTime, int priority) {
         this.pid = pid;
         this.arrivalTime = arrivalTime;
         this.burstTime = burstTime;
+        this.remainingTime = burstTime; // مهم جدًا للـ Preemptive Scheduling
         this.priority = priority;
 
         this.completionTime = 0;
         this.turnaroundTime = 0;
         this.waitingTime = 0;
         this.responseTime = -1;
+
         this.isCompleted = false;
+        this.started = false;
     }
 
     public void calculateTimes() {

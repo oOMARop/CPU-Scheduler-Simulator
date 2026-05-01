@@ -7,7 +7,7 @@ public class SJF {
 
     public static void execute(List<Process> processes) {
 
-        int currentTime = 0;
+        int time = 0;
         int completed = 0;
         int n = processes.size();
 
@@ -16,41 +16,48 @@ public class SJF {
         while (completed < n) {
 
             Process shortest = null;
-            int minRemainingTime = Integer.MAX_VALUE;
 
-            for (Process p : processes) {
+            for (Process proc : processes) {
 
-                if (p.arrivalTime <= currentTime
-                        && !p.isCompleted
-                        && p.burstTime < minRemainingTime) {
+                if (proc.arrivalTime <= time
+                        && proc.remainingTime > 0) {
 
-                    minRemainingTime = p.burstTime;
-                    shortest = p;
+                    if (shortest == null
+                            || proc.remainingTime < shortest.remainingTime
+                            || (proc.remainingTime == shortest.remainingTime
+                            && proc.arrivalTime < shortest.arrivalTime)) {
+
+                        shortest = proc;
+                    }
                 }
             }
 
-            if (shortest == null) {
-                currentTime++;
-                continue;
-            }
+            if (shortest != null) {
 
-            // First response time
-            if (shortest.responseTime == -1) {
-                shortest.responseTime = currentTime - shortest.arrivalTime;
-            }
+                // أول مرة يشتغل فيها
+                if (!shortest.started) {
+                    shortest.responseTime = time - shortest.arrivalTime;
+                    shortest.started = true;
+                }
 
-            // Execute 1 unit (Preemptive behavior)
-            shortest.burstTime--;
-            currentTime++;
+                // تنفيذ وحدة زمن واحدة (Preemptive)
+                shortest.remainingTime--;
+                time++;
 
-            if (shortest.burstTime == 0) {
-                shortest.completionTime = currentTime;
-                shortest.calculateTimes();
-                shortest.isCompleted = true;
-                completed++;
+                if (shortest.remainingTime == 0) {
+                    shortest.completionTime = time;
+                    shortest.calculateTimes();
+                    shortest.isCompleted = true;
+                    completed++;
+                }
+
+            } else {
+                // CPU Idle
+                time++;
             }
         }
 
+        // عرض النتائج
         for (Process p : processes) {
             p.display();
         }
