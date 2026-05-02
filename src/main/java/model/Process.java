@@ -20,7 +20,7 @@ public class Process {
         this.pid = pid;
         this.arrivalTime = arrivalTime;
         this.burstTime = burstTime;
-        this.remainingTime = burstTime; // مهم جدًا للـ Preemptive Scheduling
+        this.remainingTime = burstTime;
         this.priority = priority;
 
         this.completionTime = 0;
