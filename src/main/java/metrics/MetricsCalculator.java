@@ -46,7 +46,7 @@ public class MetricsCalculator {
 
     System.out.println("\n===== Comparison =====");
 
-    // Waiting Time
+    
     if (sjfWT < prWT)
         System.out.println("SJF better in Waiting Time");
     else if (sjfWT > prWT)
@@ -54,7 +54,7 @@ public class MetricsCalculator {
     else
         System.out.println("Both are equal in Waiting Time");
 
-    // Turnaround Time
+   
     if (sjfTAT < prTAT)
         System.out.println("SJF better in Turnaround Time");
     else if (sjfTAT > prTAT)
@@ -62,7 +62,7 @@ public class MetricsCalculator {
     else
         System.out.println("Both are equal in Turnaround Time");
 
-    // Response Time
+    
     if (sjfRT < prRT)
         System.out.println("SJF better in Response Time");
     else if (sjfRT > prRT)
