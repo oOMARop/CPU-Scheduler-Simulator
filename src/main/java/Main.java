@@ -34,7 +34,7 @@ public class Main {
             processes1.add(new Process(i + 1, at, bt, p));
         }
 
-        // Clone for second algorithm
+        // Clone نفس الـ processes للمقارنة بين SJF و Priority
         List<Process> processes2 = new ArrayList<>();
 
         for (Process p : processes1) {
@@ -48,13 +48,35 @@ public class Main {
             );
         }
 
+        // =========================
         // Run SJF
+        // =========================
         SJF.execute(processes1);
+
+        double sjfWT = MetricsCalculator.calculateAverageWaitingTime(processes1);
+        double sjfTAT = MetricsCalculator.calculateAverageTurnaroundTime(processes1);
+        double sjfRT = MetricsCalculator.calculateAverageResponseTime(processes1);
+
         MetricsCalculator.displayAverages(processes1);
 
+        // =========================
         // Run Priority Scheduling
+        // =========================
         PriorityScheduling.execute(processes2);
+
+        double prWT = MetricsCalculator.calculateAverageWaitingTime(processes2);
+        double prTAT = MetricsCalculator.calculateAverageTurnaroundTime(processes2);
+        double prRT = MetricsCalculator.calculateAverageResponseTime(processes2);
+
         MetricsCalculator.displayAverages(processes2);
+
+        // =========================
+        // Compare Algorithms
+        // =========================
+        MetricsCalculator.compareAlgorithms(
+                sjfWT, sjfTAT, sjfRT,
+                prWT, prTAT, prRT
+        );
 
         input.close();
     }
