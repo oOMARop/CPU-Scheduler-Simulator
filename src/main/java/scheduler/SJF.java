@@ -34,13 +34,13 @@ public class SJF {
 
             if (shortest != null) {
 
-                // أول مرة يشتغل فيها
+                
                 if (!shortest.started) {
                     shortest.responseTime = time - shortest.arrivalTime;
                     shortest.started = true;
                 }
 
-                // تنفيذ وحدة زمن واحدة (Preemptive)
+                
                 shortest.remainingTime--;
                 time++;
 
@@ -52,12 +52,12 @@ public class SJF {
                 }
 
             } else {
-                // CPU Idle
+                
                 time++;
             }
         }
 
-        // عرض النتائج
+        
         for (Process p : processes) {
             p.display();
         }
