@@ -22,7 +22,7 @@ public class PriorityScheduling {
                 if (proc.arrivalTime <= time
                         && proc.remainingTime > 0) {
 
-                    // الأقل رقم = أعلى أولوية
+                    
                     if (highest == null
                             || proc.priority < highest.priority
                             || (proc.priority == highest.priority
@@ -35,13 +35,13 @@ public class PriorityScheduling {
 
             if (highest != null) {
 
-                // أول مرة يشتغل فيها
+                 
                 if (!highest.started) {
                     highest.responseTime = time - highest.arrivalTime;
                     highest.started = true;
                 }
 
-                // تنفيذ وحدة زمن واحدة (Preemptive)
+               
                 highest.remainingTime--;
                 time++;
 
@@ -53,12 +53,12 @@ public class PriorityScheduling {
                 }
 
             } else {
-                // CPU Idle
+                
                 time++;
             }
         }
 
-        // عرض النتائج
+        
         for (Process p : processes) {
             p.display();
         }
