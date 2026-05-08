@@ -2,51 +2,30 @@ package model;
 
 public class Process {
 
-    public int pid;
+    public int id;
     public int arrivalTime;
     public int burstTime;
     public int remainingTime;
     public int priority;
 
     public int completionTime;
-    public int turnaroundTime;
     public int waitingTime;
+    public int turnaroundTime;
     public int responseTime;
 
-    public boolean isCompleted;
-    public boolean started;
+    public boolean started = false;
 
-    public Process(int pid, int arrivalTime, int burstTime, int priority) {
-        this.pid = pid;
-        this.arrivalTime = arrivalTime;
-        this.burstTime = burstTime;
-        this.remainingTime = burstTime;
-        this.priority = priority;
+    public Process(int id, int at, int bt, int p) {
+
+        this.id = id;
+        this.arrivalTime = at;
+        this.burstTime = bt;
+        this.remainingTime = bt;
+        this.priority = p;
 
         this.completionTime = 0;
-        this.turnaroundTime = 0;
         this.waitingTime = 0;
-        this.responseTime = -1;
-
-        this.isCompleted = false;
-        this.started = false;
-    }
-
-    public void calculateTimes() {
-        turnaroundTime = completionTime - arrivalTime;
-        waitingTime = turnaroundTime - burstTime;
-    }
-
-    public void display() {
-        System.out.println(
-            "P" + pid +
-            " | AT: " + arrivalTime +
-            " | BT: " + burstTime +
-            " | Priority: " + priority +
-            " | CT: " + completionTime +
-            " | TAT: " + turnaroundTime +
-            " | WT: " + waitingTime +
-            " | RT: " + responseTime
-        );
+        this.turnaroundTime = 0;
+        this.responseTime = 0;
     }
 }
