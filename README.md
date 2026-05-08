@@ -1,92 +1,159 @@
-CPU Scheduling Simulator
+# CPU Scheduling Simulator
 
-Overview
+## Project Description
 
-This is a Java-based CPU Scheduling Simulator
+This project is a CPU Scheduling Simulator developed using JavaFX.
 
-The system simulates two important CPU scheduling algorithms:
+The simulator compares two CPU scheduling algorithms:
 
-- Preemptive Shortest Job First (SJF)
-- Preemptive Priority Scheduling
+* Shortest Job First (SJF)
+* Priority Scheduling
 
-The main goal of this project is to compare the performance of different scheduling algorithms based on process execution.
+The system allows users to:
 
+* Enter process information
+* Select scheduling algorithm
+* Calculate scheduling metrics
+* Compare algorithms
+* Display Gantt Chart visualization
 
-Features
+---
 
-- Process creation with:
-  - Process ID
-  - Arrival Time
-  - Burst Time
-  - Priority
+# Features
 
-- Preemptive SJF Scheduling
+* GUI Interface using JavaFX
+* Dynamic process table
+* Editable input fields
+* SJF Scheduling
+* Priority Scheduling
+* Performance Metrics:
 
-- Preemptive Priority Scheduling
+  * Waiting Time (WT)
+  * Turnaround Time (TAT)
+  * Response Time (RT)
+* Algorithm Comparison
+* Gantt Chart Visualization
+* Input Validation
+* Ready-made Scenario Buttons
 
-- Automatic calculation of:
-  - Completion Time (CT)
-  - Turnaround Time (TAT)
-  - Waiting Time (WT)
-  - Response Time (RT)
+---
 
-- Performance comparison between algorithms
+# Technologies Used
 
-- Average metrics calculation for better evaluation
-
-
-How the Project Works
-
-Step 1: Process Input
-
-The user enters:
-
-- Number of processes
-- Arrival Time for each process
-- Burst Time for each process
-- Priority value for each process
-
-Each process is stored as an object using the `Process` class.
+* Java
+* JavaFX
+* Maven
+* OOP Concepts
 
 
-Step 2: Scheduling Execution
+---
 
-The system runs:
+# How To Run
 
-Preemptive SJF
+1. Open the project in NetBeans or IntelliJ.
+2. Run MainGUI.java
+3. Enter number of processes.
+4. Choose scheduling algorithm.
+5. Fill process data.
+6. Click Run Scheduling.
 
-The CPU selects the process with the shortest remaining burst time.
+---
 
-If a shorter process arrives, the current process is preempted.
+# Scheduling Metrics
+
+The simulator calculates:
+
+* Completion Time (CT)
+* Waiting Time (WT)
+* Turnaround Time (TAT)
+* Response Time (RT)
+
+Average metrics are also displayed.
+
+---
+
+# Scenario 1 — SJF Better Performance
+
+## Purpose
+
+Demonstrates how SJF minimizes waiting time and turnaround time.
+
+## Input
+
+| Process | Arrival | Burst | Priority |
+| ------- | ------- | ----- | -------- |
+| P1      | 0       | 7     | 2        |
+| P2      | 2       | 4     | 1        |
+| P3      | 4       | 1     | 3        |
+
+## Expected Result
+
+* SJF achieves lower waiting time.
+* Faster execution for short processes.
+
+<img width="1280" height="945" alt="image" src="https://github.com/user-attachments/assets/b33f5261-d561-44df-ac1e-883fda09b1a4" />
 
 
-Preemptive Priority Scheduling
+---
 
-The CPU selects the process with the highest priority.
+# Scenario 2 — Priority Scheduling
 
-(Lower priority number means higher priority)
+## Purpose
 
-If a higher-priority process arrives, the current process is preempted.
+Demonstrates how Priority Scheduling handles important processes first.
+
+## Input
+
+| Process | Arrival | Burst | Priority |
+| ------- | ------- | ----- | -------- |
+| P1      | 0       | 8     | 3        |
+| P2      | 1       | 2     | 1        |
+| P3      | 2       | 1     | 2        |
+| P4      | 3       | 3     | 1        |
+
+## Expected Result
+
+* High priority processes execute earlier.
+* Better responsiveness for critical tasks.
+
+(Add Screenshot Here)
+
+---
+
+# Scenario 3 — Equal/Fair Scheduling
+
+## Purpose
+
+Demonstrates a balanced case between algorithms.
+
+## Input
+
+| Process | Arrival | Burst | Priority |
+| ------- | ------- | ----- | -------- |
+| P1      | 0       | 5     | 1        |
+| P2      | 0       | 5     | 1        |
+
+## Expected Result
+
+* Similar results between both algorithms.
+
+(Add Screenshot Here)
+
+---
+
+# Future Improvements
+
+* Add Round Robin Scheduling
+* Add FCFS Scheduling
+* Better Gantt Chart Timeline
+* Export Results to File
+* Dark Mode UI
+
+---
 
 
-Step 3: Metrics Calculation
+# Conclusion
 
-After execution, the system calculates:
+This project demonstrates how CPU scheduling algorithms affect system performance and process execution behavior.
 
-- Completion Time
-- Waiting Time
-- Turnaround Time
-- Response Time
-
-It also calculates the average values for all processes.
-
-
-Step 4: Algorithm Comparison
-
-The system compares:
-
-- Average Waiting Time
-- Average Turnaround Time
-- Average Response Time
-
-Then it shows which scheduling algorithm performs better.
+SJF is efficient for minimizing waiting time, while Priority Scheduling is useful for handling critical processes first.
