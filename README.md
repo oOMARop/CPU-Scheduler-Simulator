@@ -96,6 +96,9 @@ Demonstrates how SJF minimizes waiting time and turnaround time.
 <img width="1127" height="860" alt="Screenshot_2" src="https://github.com/user-attachments/assets/35bf0578-797b-4bc9-b112-4df530543e1c" />
 
 
+<img width="1128" height="853" alt="Screenshot_3" src="https://github.com/user-attachments/assets/8fa333c1-e60d-42df-bca4-b1274156adc1" />
+
+
 
 ---
 
@@ -119,7 +122,11 @@ Demonstrates how Priority Scheduling handles important processes first.
 * High priority processes execute earlier.
 * Better responsiveness for critical tasks.
 
-(Add Screenshot Here)
+<img width="1128" height="855" alt="Screenshot_4" src="https://github.com/user-attachments/assets/c632d88e-f8e5-409d-92c0-17b608d20188" />
+
+
+<img width="1126" height="855" alt="Screenshot_5" src="https://github.com/user-attachments/assets/84c626f3-f28b-4d6f-9340-0ba52aaaeda2" />
+
 
 ---
 
