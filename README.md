@@ -91,7 +91,10 @@ Demonstrates how SJF minimizes waiting time and turnaround time.
 * SJF achieves lower waiting time.
 * Faster execution for short processes.
 
-<img width="1280" height="945" alt="image" src="https://github.com/user-attachments/assets/b33f5261-d561-44df-ac1e-883fda09b1a4" />
+
+
+<img width="1127" height="860" alt="Screenshot_2" src="https://github.com/user-attachments/assets/35bf0578-797b-4bc9-b112-4df530543e1c" />
+
 
 
 ---
