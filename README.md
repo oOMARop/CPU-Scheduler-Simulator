@@ -147,7 +147,11 @@ Demonstrates a balanced case between algorithms.
 
 * Similar results between both algorithms.
 
-(Add Screenshot Here)
+<img width="1127" height="852" alt="Screenshot_6" src="https://github.com/user-attachments/assets/3ad3d34e-ca45-4a7b-96db-f4ca4f369de2" />
+
+
+<img width="1128" height="855" alt="Screenshot_7" src="https://github.com/user-attachments/assets/42410977-032a-41ab-963e-d7d32e03b3dc" />
+
 
 ---
 
