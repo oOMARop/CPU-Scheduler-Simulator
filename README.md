@@ -91,13 +91,7 @@ Demonstrates how SJF minimizes waiting time and turnaround time.
 * SJF achieves lower waiting time.
 * Faster execution for short processes.
 
-
-
-<img width="1127" height="860" alt="Screenshot_2" src="https://github.com/user-attachments/assets/35bf0578-797b-4bc9-b112-4df530543e1c" />
-
-
-<img width="1128" height="853" alt="Screenshot_3" src="https://github.com/user-attachments/assets/8fa333c1-e60d-42df-bca4-b1274156adc1" />
-
+<img width="1201" height="884" alt="s 1" src="https://github.com/user-attachments/assets/b5461f79-a6f1-4389-8edf-500f0f2bff45" />
 
 
 ---
@@ -122,10 +116,7 @@ Demonstrates how Priority Scheduling handles important processes first.
 * High priority processes execute earlier.
 * Better responsiveness for critical tasks.
 
-<img width="1128" height="855" alt="Screenshot_4" src="https://github.com/user-attachments/assets/c632d88e-f8e5-409d-92c0-17b608d20188" />
-
-
-<img width="1126" height="855" alt="Screenshot_5" src="https://github.com/user-attachments/assets/84c626f3-f28b-4d6f-9340-0ba52aaaeda2" />
+<img width="1201" height="881" alt="s 2" src="https://github.com/user-attachments/assets/dd890516-d16b-4ac5-84ab-b81bb4bef055" />
 
 
 ---
@@ -147,14 +138,17 @@ Demonstrates a balanced case between algorithms.
 
 * Similar results between both algorithms.
 
-<img width="1127" height="852" alt="Screenshot_6" src="https://github.com/user-attachments/assets/3ad3d34e-ca45-4a7b-96db-f4ca4f369de2" />
-
-
-<img width="1128" height="855" alt="Screenshot_7" src="https://github.com/user-attachments/assets/42410977-032a-41ab-963e-d7d32e03b3dc" />
+<img width="1201" height="883" alt="s 3" src="https://github.com/user-attachments/assets/9f54a608-b800-4712-a6d6-57e11a6529a0" />
 
 
 ---
 
+# Scenario 3 — Invalid Input
+
+<img width="1201" height="881" alt="s 4" src="https://github.com/user-attachments/assets/2ece9ec1-64dd-48b2-a88e-44d660d8e249" />
+
+
+---
 # Future Improvements
 
 * Add Round Robin Scheduling
