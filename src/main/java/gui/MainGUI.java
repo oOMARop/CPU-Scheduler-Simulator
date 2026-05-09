@@ -34,14 +34,14 @@ public class MainGUI extends Application {
         Label label = new Label("Enter number of processes:");
         TextField numberField = new TextField();
 
-        // numbers only validation
+        
         numberField.textProperty().addListener((obs, oldVal, newVal) -> {
             if (!newVal.matches("\\d*")) {
                 numberField.setText(newVal.replaceAll("[^\\d]", ""));
             }
         });
 
-        // ================= BUTTONS =================
+        
         Button createBtn = new Button("Create Table");
         Button runBtn = new Button("Run Scheduling");
 
@@ -49,7 +49,7 @@ public class MainGUI extends Application {
         Button scenario2 = new Button("Scenario 2");
         Button scenario3 = new Button("Scenario 3");
 
-        // ================= SCENARIO ACTIONS =================
+        
         scenario1.setOnAction(e -> {
             numberField.setText("3");
             createBtn.fire();
@@ -74,7 +74,7 @@ public class MainGUI extends Application {
             inputTable.getItems().set(1, new String[]{"P2", "0", "5", "1"});
         });
 
-        // ================= BUTTON LOGIC =================
+        
         createBtn.setOnAction(e -> {
             try {
                 if (numberField.getText().isEmpty()) {
@@ -159,13 +159,13 @@ public class MainGUI extends Application {
             }
         });
 
-        // ================= ROOT / IMPROVED LAYOUT =================
+        
 
-        // Pre-defining the scenarioBox to fix Screenshot_14.png error
+        
         HBox scenarioBox = new HBox(10);
         scenarioBox.getChildren().addAll(scenario1, scenario2, scenario3);
 
-        // 1. Left Side: Input Controls
+        
         VBox leftPane = new VBox(15);
         leftPane.setPadding(new Insets(20));
         leftPane.setMinWidth(350);
@@ -180,17 +180,17 @@ public class MainGUI extends Application {
             runBtn
         );
 
-        // 2. Right Side: Results & Charts
+        
         VBox rightPane = new VBox(20);
         rightPane.setPadding(new Insets(20));
         rightPane.setAlignment(Pos.TOP_LEFT);
 
-        // SJF Section
+        
         VBox sjfSection = new VBox(5, new Label("📊 SJF Non-Preemptive"), sjfTable, new Label("SJF Gantt Chart"), sjfGantt);
-        // Priority Section
+        
         VBox prioritySection = new VBox(5, new Label("📊 Priority Non-Preemptive"), priorityTable, new Label("Priority Gantt Chart"), priorityGantt);
 
-        // Metrics & Comparison
+        
         HBox statsBox = new HBox(20, metricsLabel, comparisonLabel);
         statsBox.setStyle("-fx-background-color: #fff; -fx-padding: 15; -fx-border-color: #eee; -fx-border-radius: 5;");
 
@@ -201,11 +201,11 @@ public class MainGUI extends Application {
             statsBox
         );
 
-        // MAIN LAYOUT (Combine Left & Right)
+        
         HBox mainLayout = new HBox(leftPane, rightPane);
         HBox.setHgrow(rightPane, Priority.ALWAYS);
 
-        // Column Policy to fix Screenshot_13.png grey gaps
+        
         inputTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         sjfTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         priorityTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -223,7 +223,7 @@ public class MainGUI extends Application {
         stage.show();
     }
 
-    // ================= HELPER METHODS (Logic Kept Exactly Same) =================
+    
 
     void setupResultTable(TableView<String[]> table, ArrayList<Process> processes) {
         table.getColumns().clear();
