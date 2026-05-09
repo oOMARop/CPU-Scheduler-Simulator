@@ -12,7 +12,6 @@ The simulator compares two CPU scheduling algorithms:
 The system allows users to:
 
 * Enter process information
-* Select scheduling algorithm
 * Calculate scheduling metrics
 * Compare algorithms
 * Display Gantt Chart visualization
@@ -53,9 +52,8 @@ The system allows users to:
 1. Open the project in NetBeans or IntelliJ.
 2. Run MainGUI.java or javafx run
 3. Enter number of processes.
-4. Choose scheduling algorithm.
-5. Fill process data.
-6. Click Run Scheduling.
+4. Fill process data.
+5. Click Run Scheduling.
 
 ---
 
