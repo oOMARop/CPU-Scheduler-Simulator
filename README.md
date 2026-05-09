@@ -147,15 +147,6 @@ Demonstrates a balanced case between algorithms.
 
 
 ---
-# Future Improvements
-
-* Add Round Robin Scheduling
-* Add FCFS Scheduling
-* Better Gantt Chart Timeline
-* Export Results to File
-* Dark Mode UI
-
----
 
 
 # Conclusion
