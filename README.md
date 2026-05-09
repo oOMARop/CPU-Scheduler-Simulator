@@ -143,7 +143,7 @@ Demonstrates a balanced case between algorithms.
 
 ---
 
-# Scenario 3 — Invalid Input
+# Scenario 4 — Invalid Input
 
 <img width="1201" height="881" alt="s 4" src="https://github.com/user-attachments/assets/2ece9ec1-64dd-48b2-a88e-44d660d8e249" />
 
