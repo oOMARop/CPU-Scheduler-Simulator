@@ -51,7 +51,7 @@ The system allows users to:
 # How To Run
 
 1. Open the project in NetBeans or IntelliJ.
-2. Run MainGUI.java
+2. Run MainGUI.java or javafx run
 3. Enter number of processes.
 4. Choose scheduling algorithm.
 5. Fill process data.
